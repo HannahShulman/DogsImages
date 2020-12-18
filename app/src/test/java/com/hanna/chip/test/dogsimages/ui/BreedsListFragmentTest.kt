@@ -47,7 +47,7 @@ class BreedsListFragmentTest {
     }
 
     @Test
-    fun `when beer list resource is successful, list adapter item count, is equals to breed list`() {
+    fun `when breed list resource is successful, list adapter item count, is equals to breed list`() {
         listValue.value = initDogBreedListResource
         scenario.onFragment {
             val rv = it.view!!.findViewById<RecyclerView>(R.id.breeds_list)
@@ -56,7 +56,7 @@ class BreedsListFragmentTest {
     }
 
     @Test
-    fun `when beer list resource is successful, ViewStates_MAIN resource id is visible`() {
+    fun `when breed list resource is successful, ViewStates_MAIN resource id is visible`() {
         listValue.value = initDogBreedListResource
         scenario.onFragment {
             val mainView = it.view!!.findViewById<View>(R.id.main_view)
@@ -65,7 +65,7 @@ class BreedsListFragmentTest {
     }
 
     @Test
-    fun `when beer list resource is loading with data, ViewStates_MAIN resource id is visible`() {
+    fun `when breed list resource is loading with data, ViewStates_MAIN resource id is visible`() {
         listValue.value = Resource.loading(initDogBreedListResource.data)
         scenario.onFragment {
             val mainView = it.view!!.findViewById<View>(R.id.main_view)
@@ -74,7 +74,7 @@ class BreedsListFragmentTest {
     }
 
     @Test
-    fun `when beer list resource is loading with no data, ViewStates_LOADING resource id is visible`() {
+    fun `when breed list resource is loading with no data, ViewStates_LOADING resource id is visible`() {
         listValue.value = Resource.loading(null)
         scenario.onFragment {
             val mainView = it.view!!.findViewById<View>(R.id.loading_view)
@@ -83,7 +83,7 @@ class BreedsListFragmentTest {
     }
 
     @Test
-    fun `when beer list resource is error with no data, ViewStates_LOADING resource id is visible`() {
+    fun `when breed list resource is error with no data, ViewStates_LOADING resource id is visible`() {
         listValue.value = Resource.error("An error has occurred", null)
         scenario.onFragment {
             assertThat(ShadowToast.getTextOfLatestToast()).isEqualTo("An error has occurred")
